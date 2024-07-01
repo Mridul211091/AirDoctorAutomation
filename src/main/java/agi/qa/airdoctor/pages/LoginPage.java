@@ -28,6 +28,7 @@ public class LoginPage {
 	private By buynowbtn= By.xpath("(//a[normalize-space()='Buy Now'])[1]");
 	private By shopnowbtn= By.xpath("//*[@id=\"content\"]/div/div/div[2]/a");
 	private By shopNow =By.xpath("//a[@href='https://airdoctorpro.com/purifiers/']//span[contains(text(),'shop now')]");
+	private By shopNowstage =By.xpath("//a[@href='https://airdoctorazstg.wpengine.com/purifiers/']//span[contains(text(),'shop now')]");
 	private By cookiebannerbtn= By.cssSelector("div > div > div.dg-main-actions > button.dg-button.accept_all");
 	private By cookie= By.cssSelector(".sc-dcJsrY.hNTnAz");
 	private By shadowroot= By.xpath("//aside[@class='dg-consent-banner theme-neutral position-bottom visible']");
@@ -108,7 +109,7 @@ public class LoginPage {
 		//Thread.sleep(2000);
 		//driver.findElement(shadowroot).getShadowRoot().findElement(cookiebannerbtn).click();
 		Thread.sleep(2000);
-		eleUtil.clickWhenReady(shopNow, TimeUtil.DEFAULT_LONG_TIME);
+		eleUtil.clickWhenReady(shopNowstage, TimeUtil.DEFAULT_LONG_TIME);
 		return new IndependenceDayOrderFlowPage(driver);
 		
 	}
