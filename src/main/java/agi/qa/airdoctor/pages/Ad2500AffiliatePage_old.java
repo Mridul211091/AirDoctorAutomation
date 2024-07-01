@@ -16,6 +16,7 @@ import agi.qa.airdoctor.utils.ElementUtil;
 import agi.qa.airdoctor.utils.ExcelUtil;
 import agi.qa.airdoctor.utils.JavaScriptUtil;
 import agi.qa.airdoctor.utils.TimeUtil;
+import io.qameta.allure.Step;
 
 public class Ad2500AffiliatePage_old {
 
@@ -427,10 +428,11 @@ public class Ad2500AffiliatePage_old {
 			
 		}
 		
-		public void writeexcel(String subtotal,String flatrate,String tax, String total,String orderId, int count) throws InvalidFormatException, IOException {
-			ExcelUtil.setdata(AppConstants.PRODUCT_SHEET_NAME,subtotal,flatrate,tax,total,orderId,count);
+		@Step("Entering Values in Excel sheet for Subtotal,Shipping,Tax and Overall Total")
+		public void writeexcel(String subtotal, String flatrate, String tax, String total,String presubtotal, String preflatrate, String pretax, String pretotal,String orderId, int count)
+				throws InvalidFormatException, IOException {
+			ExcelUtil.setdata(AppConstants.STAGE_SHEET_NAME, presubtotal, preflatrate, pretax, pretotal,subtotal, flatrate, tax, total,orderId, count);
 		}
-		
 		public int testMe(ITestContext testContext) {
 			   int currentCount = testContext.getAllTestMethods()[0].getCurrentInvocationCount();
 			   System.out.println("Executing count: " + currentCount);

@@ -19,7 +19,7 @@
 		<parameter name="browser" value="chrome" />
 
 		<classes>
-			<class name="agi.qa.airdoctor.tests.Ad2500AffiliatePageTest" />
+			<class name="agi.qa.airdoctor.tests.AirDoctorSummerSaleLiveTest" />
 		</classes>
 	</test>
 

@@ -40,9 +40,9 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	  String phonenumber,String Upsell1,String subtotal, String flatrate, String tax, 
 	  String finaltotal) throws InterruptedException, Exception {
 	try {
-	  airddoctorstg = loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
+	  loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
 	  airddoctorstg.clearCart();
-	  airddoctorstg = loginPage.clickShopNow();
+	  loginPage.clickShopNow();
 	  softAssert = new SoftAssert();
 	  int currenttest= airddoctorstg.testMe(testContext);
 	  Thread.sleep(3000);
@@ -65,7 +65,7 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	  softAssert.assertEquals(productActDetailsMap.get("total"), finaltotal);
 	  System.out.println("Expected total: "+finaltotal+" || Actual total: "+productActDetailsMap.get("total"));
 	  System.out.println("=============================================================");
-	  airddoctorstg.writeexcel(productActDetailsMap.get("subtotal"),productActDetailsMap.get("Shipping"),productActDetailsMap.get("tax"),productActDetailsMap.get("total"),productActDetailsMap.get("OrderID"),currenttest); 
+	 // airddoctorstg.writeexcel(preOrderDetailsMap.get("preordersubtotal"),preOrderDetailsMap.get("preorderShipping"),preOrderDetailsMap.get("preordertax"),preOrderDetailsMap.get("preordertotal"),productActDetailsMap.get("subtotal"),productActDetailsMap.get("Shipping"),productActDetailsMap.get("tax"),productActDetailsMap.get("total"),productActDetailsMap.get("OrderID"),currenttest); 
 	  softAssert.assertAll();
 	}
 	finally {

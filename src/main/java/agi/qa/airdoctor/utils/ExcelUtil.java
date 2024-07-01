@@ -64,7 +64,7 @@ public class ExcelUtil {
 
 	}
 	
-	public static void setdata(String sheetName, String subtotal,String shipping,String tax,String total,String orderId,int count) throws IOException, InvalidFormatException {
+	public static void setdata(String sheetName, String subtotal,String shipping,String tax,String total,String presubtotal,String preshipping,String pretax,String pretotal,String orderId,int count) throws IOException, InvalidFormatException {
    
 
 		FileInputStream ip = new FileInputStream(TEST_DATA_SHEET_PATH);
@@ -80,6 +80,31 @@ public class ExcelUtil {
         
         	
             //create a new cell in the row at index 6
+		 cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
+         System.out.println("Row Number "+(count+1)+" Coloum "+sheet.getRow(count+1).getLastCellNum());
+         cell.setCellValue(subtotal);
+         System.out.println("Subtotal on row "+ (count+1) +" and Coloum "+(sheet.getRow(count+1).getLastCellNum())+" is "+presubtotal);
+         
+         System.out.println("=========================================================================");
+         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
+         System.out.println("Row Number "+(count+1)+" Coloum Number "+(sheet.getRow(count+1).getLastCellNum()));
+         cell.setCellValue(shipping);
+         System.out.println("Shipping on row "+(count+1)+" and Coloum Number "+(sheet.getRow(count+1).getLastCellNum())+" is "+preshipping);
+         System.out.println("=========================================================================");
+         
+         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
+         System.out.println("Row Number "+(count+1)+" Coloum Number "+(sheet.getRow(count+1).getLastCellNum()));
+         cell.setCellValue(tax);
+         System.out.println("Tax on row "+(count+1)+" and Coloum Number "+(sheet.getRow(count+1).getLastCellNum())+" is "+pretax);
+         System.out.println("=========================================================================");
+         
+         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
+         System.out.println("Row Number"+(count+1)+" Coloum Number "+(sheet.getRow(count+1).getLastCellNum()));
+         cell.setCellValue(total);
+         System.out.println(" Total on row "+(count+1)+" and Coloum Number "+(sheet.getRow(count+1).getLastCellNum())+" is "+pretotal);
+         System.out.println("=========================================================================");
+                         
+		
          cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
          System.out.println("Row Number "+(count+1)+" Coloum "+sheet.getRow(count+1).getLastCellNum());
          cell.setCellValue(subtotal);
@@ -103,7 +128,7 @@ public class ExcelUtil {
          cell.setCellValue(total);
          System.out.println(" Total on row "+(count+1)+" and Coloum Number "+(sheet.getRow(count+1).getLastCellNum())+" is "+total);
          System.out.println("=========================================================================");
-         
+                 
          cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
          System.out.println("Row Number"+(count+1)+" Coloum Number "+(sheet.getRow(count+1).getLastCellNum()));
          cell.setCellValue(orderId);

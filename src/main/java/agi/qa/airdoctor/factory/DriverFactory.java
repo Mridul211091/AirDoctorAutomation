@@ -73,8 +73,8 @@ public class DriverFactory {
 
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
-		//getDriver().get(prop.getProperty("url"));
-		//getDriver().get();
+		getDriver().get(prop.getProperty("url"));
+		
 
 		return getDriver();
 	}

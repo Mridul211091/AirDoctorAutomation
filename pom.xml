@@ -139,7 +139,7 @@
 						<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
 					</suiteXmlFiles>
 
-					<argLine>-javaagent:"${com.browserstack:browserstack-java-sdk:jar}"
+					<argLine>
 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
 
 

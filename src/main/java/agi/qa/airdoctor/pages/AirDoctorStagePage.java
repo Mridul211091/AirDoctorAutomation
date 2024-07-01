@@ -994,9 +994,9 @@ public class AirDoctorStagePage {
 	}
     
 	@Step("Entering Values in Excel sheet for Subtotal,Shipping,Tax and Overall Total")
-	public void writeexcel(String subtotal, String flatrate, String tax, String total,String orderId, int count)
+	public void writeexcel(String subtotal, String flatrate, String tax, String total,String presubtotal, String preflatrate, String pretax, String pretotal,String orderId, int count)
 			throws InvalidFormatException, IOException {
-		ExcelUtil.setdata(AppConstants.STAGE_SHEET_NAME, subtotal, flatrate, tax, total,orderId, count);
+		ExcelUtil.setdata(AppConstants.STAGE_SHEET_NAME, presubtotal, preflatrate, pretax, pretotal,subtotal, flatrate, tax, total,orderId, count);
 	}
 
 	public int testMe(ITestContext testContext) {

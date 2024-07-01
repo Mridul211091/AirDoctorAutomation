@@ -40,8 +40,8 @@ public class Ad2500AffiliatePageTest extends BaseTest {
 	}
 
 	@Test
-	public void LandingPageBannerTest() throws InterruptedException {
-		String bannerText = affiliatePage.getBannerText();
+	public void LandingPageBannerTest(String url) throws InterruptedException {
+		String bannerText = affiliatePage.getBannerText(url);
 		Assert.assertEquals(bannerText, AppConstants.AD_AFFILIATE_PAGE_BANNER_TEXT);
 	}
 
@@ -49,10 +49,11 @@ public class Ad2500AffiliatePageTest extends BaseTest {
 	  public void AffiliateLinkTest(ITestContext testContext,String url) throws Exception { 
 	  //setup(); 
 	try {
+	  url = url.trim();
 	  softAssert = new SoftAssert();
 	  affiliatePage = affiliatePage.getaffiliateURL(url);	 
-	  String bannerText = affiliatePage.getCustomAffilateBannerText(url);
-	  softAssert.assertEquals(bannerText,AppConstants.AD_CUSTOMAFFILIATE_PAGE_BANNER_TEXT);  
+	  String bannerText = affiliatePage.getBannerText(url);
+	  softAssert.assertEquals(bannerText,AppConstants.AD_CUSTOMAFFILIATE2_PAGE_BANNER_TEXT);  
 	  softAssert.assertAll(); 
 	}
 	finally {

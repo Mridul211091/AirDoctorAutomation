@@ -212,8 +212,10 @@ public class Ad2500AffiliatePage {
 		driver.get(url);
 		return new Ad2500AffiliatePage(driver);
 	}
-
-	public String getBannerText() {
+	@Step("This is to validate the banner on landing page")
+	public String getBannerText(String url) {
+		JsUtil.setzoomlevelByJS(driver);
+		Allure.addAttachment(url, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
 		String title = eleUtil.doGetElementText(bannerText);
 		System.out.println("Landing page banner text : " + title);
 		return title;
@@ -221,6 +223,7 @@ public class Ad2500AffiliatePage {
 	
 	@Step("This is to validate the banner on landing page")
 	public String getCustomAffilateBannerText(String url){
+		JsUtil.setzoomlevelByJS(driver);
 		Allure.addAttachment(url, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
 		eleUtil.waitForElementToBeClickable(customaffiliatebannerText, 5);
 		String title = eleUtil.doGetElementText(customaffiliatebannerText);
@@ -925,9 +928,10 @@ public class Ad2500AffiliatePage {
 
 	}
 
-	public void writeexcel(String subtotal, String flatrate, String tax, String total,String orderId, int count)
+	@Step("Entering Values in Excel sheet for Subtotal,Shipping,Tax and Overall Total")
+	public void writeexcel(String subtotal, String flatrate, String tax, String total,String presubtotal, String preflatrate, String pretax, String pretotal,String orderId, int count)
 			throws InvalidFormatException, IOException {
-		ExcelUtil.setdata(AppConstants.PRODUCT_SHEET_NAME, subtotal, flatrate, tax, total,orderId, count);
+		ExcelUtil.setdata(AppConstants.STAGE_SHEET_NAME, presubtotal, preflatrate, pretax, pretotal,subtotal, flatrate, tax, total,orderId, count);
 	}
 
 	public int testMe(ITestContext testContext) {

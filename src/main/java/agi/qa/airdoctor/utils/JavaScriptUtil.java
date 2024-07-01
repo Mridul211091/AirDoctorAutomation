@@ -53,7 +53,7 @@ private WebDriver driver;
 	
 	public void setzoomlevelByJS(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver; 
-		js.executeScript("document.body.style.zoom='75%'"); 
+		js.executeScript("document.body.style.zoom='80%'"); 
 	}
 	
 	
