@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="agi.qa.airdoctor.tests.LiveIndependenceDayOrderFlowTest">
+      <class name="agi.qa.airdoctor.tests.AirDoctorOrderFlowTest">
         <methods>
           <include name="tearDown"/>
-          <include name="placeOrder"/>
           <include name="setup"/>
+          <include name="placeOrder"/>
           <include name="affilatePageSetup"/>
         </methods>
-      </class> <!-- agi.qa.airdoctor.tests.LiveIndependenceDayOrderFlowTest -->
+      </class> <!-- agi.qa.airdoctor.tests.AirDoctorOrderFlowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
