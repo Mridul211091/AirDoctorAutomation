@@ -30,19 +30,21 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	
 	
 	  @DataProvider public Object[][] getDataFromExcel() { 
-	   return ExcelUtil.getTestData(AppConstants.STAGE_SHEET_NAME); 
+	   return ExcelUtil.getTestData(AppConstants. EVERFLOW_TEST ); 
 	   }
 	 
 	
 	  @Test(dataProvider = "getDataFromExcel") 
-	  public void placeOrder(ITestContext testContext,String ModelName,String ProductQuantity,String ModeltwoName,String ProducttwoQuantity, String email, 
-	  String firstname, String lastname, String addone, String addtwo, String cty ,String state,String zipcode,
+	  public void placeOrder(ITestContext testContext,String ModelName,String ProductQuantity,
+	  String ModeltwoName,String ProducttwoQuantity, String filter,String email, String firstname, 
+	  String lastname, String addone, String addtwo, String cty ,String state,String zipcode,
 	  String phonenumber,String Upsell1,String subtotal, String flatrate, String tax, 
 	  String finaltotal) throws InterruptedException, Exception {
 	try {
-	  loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
+	  //loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
 	  airddoctorstg.clearCart();
-	  loginPage.clickShopNow();
+	  airddoctorstg.clearcookiepopup();
+	  airddoctorstg.clickShopNow();
 	  softAssert = new SoftAssert();
 	  int currenttest= airddoctorstg.testMe(testContext);
 	  Thread.sleep(3000);
@@ -65,7 +67,7 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	  softAssert.assertEquals(productActDetailsMap.get("total"), finaltotal);
 	  System.out.println("Expected total: "+finaltotal+" || Actual total: "+productActDetailsMap.get("total"));
 	  System.out.println("=============================================================");
-	 // airddoctorstg.writeexcel(preOrderDetailsMap.get("preordersubtotal"),preOrderDetailsMap.get("preorderShipping"),preOrderDetailsMap.get("preordertax"),preOrderDetailsMap.get("preordertotal"),productActDetailsMap.get("subtotal"),productActDetailsMap.get("Shipping"),productActDetailsMap.get("tax"),productActDetailsMap.get("total"),productActDetailsMap.get("OrderID"),currenttest); 
+	  airddoctorstg.writeexcelold(productActDetailsMap.get("subtotal"),productActDetailsMap.get("Shipping"),productActDetailsMap.get("tax"),productActDetailsMap.get("total"),productActDetailsMap.get("OrderID"),currenttest); 
 	  softAssert.assertAll();
 	}
 	finally {

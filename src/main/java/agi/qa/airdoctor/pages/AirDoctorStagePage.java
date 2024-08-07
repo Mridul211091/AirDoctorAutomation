@@ -17,6 +17,7 @@ import org.testng.ITestContext;
 import agi.qa.airdoctor.constants.AppConstants;
 import agi.qa.airdoctor.utils.ElementUtil;
 import agi.qa.airdoctor.utils.ExcelUtil;
+import agi.qa.airdoctor.utils.ExcelUtilOld;
 import agi.qa.airdoctor.utils.JavaScriptUtil;
 import agi.qa.airdoctor.utils.TimeUtil;
 import io.qameta.allure.Step;
@@ -33,12 +34,14 @@ public class AirDoctorStagePage {
 	private By UpdradetoIotbtn = By.xpath("//a[text()='UPGRADE ME FOR $50']");
 	private By buyUpsell = By.xpath("//a[normalize-space()='Continue']");
 	private By cancelUpsell = By.xpath("//a[normalize-space()='No Thanks']");
-	
+	private By cookiebannerbtn= By.cssSelector("div > div > div.dg-main-actions > button.dg-button.accept_all");
+	private By cookie= By.cssSelector(".sc-dcJsrY.hNTnAz");
+	private By shadowroot= By.xpath("//aside[@class='dg-consent-banner theme-neutral position-bottom visible']");
 
 	// AD3500 locators
 	private By AD3500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135514']//input[@value='+']");
 	//private By ad3500UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='135528']");
-	private By ad3500UpgradeToIotCheckbox = By.xpath("//*[@id=\"wi-fi-connected135514\"]");
+	private By ad3500UpgradeToIotCheckbox = By.xpath("//*[@id='wi-fi-connected135514']");
 	private By regularPrice = By.xpath(
 			"//*[@id='nu-custom-heading-title' and contains(text(), 'Buy AirDoctor 3500')]/following-sibling::div[contains(@class, 'main-price-wrapper')]/p[@class='earth_day_price']/span[contains(text(), 'Regular Price:')]/del/span/bdi");
 	private By salePrice = By.xpath(
@@ -91,7 +94,7 @@ public class AirDoctorStagePage {
 
 	// Buy AirDoctor 2000 And Receive $110 Off
 	private By buyAD2000increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135592']//input[@value='+']");
-	private By buyAD2000UpgradeToIotCheckbox = By.xpath("//*[@id='wi-fi-connected135600']");
+	private By buyAD2000UpgradeToIotCheckbox = By.xpath("//*[@id='wi-fi-connected135592']");
 	//private By buyAD2000UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='135596']");
 	private By buyAD2000addToCart = By.xpath("//a[@id='iot_productaddtocart_135592']");
 
@@ -197,6 +200,11 @@ public class AirDoctorStagePage {
 		String checkoutText = eleUtil.doGetElementText(cartText);
 		System.out.println("Cart Button Text : " + checkoutText);
 		return checkoutText;
+	}
+	
+	public void clearcookiepopup() throws InterruptedException {
+		driver.findElement(shadowroot).getShadowRoot().findElement(cookiebannerbtn).click();
+		Thread.sleep(2000);
 	}
 
 	@Step("Removing Products from Cart")
@@ -390,12 +398,16 @@ public class AirDoctorStagePage {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
-				eleUtil.doClickcheckbox(ad3500UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
-				// eleUtil.doActionsClick(ad3500UpgradeToIotCheckbox);
-				Thread.sleep(5000);
-				eleUtil.doActionsClick(ad3500addToCart);
+				//eleUtil.doClickcheckbox(ad3500UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				eleUtil.doActionsClick(ad3500UpgradeToIotCheckbox);
 				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad3500UpgradeToIotCheckbox);
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(ad3500addToCart);
+				eleUtil.doActionsClick(ad3500addToCart);
+				Thread.sleep(5000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
 
@@ -403,13 +415,15 @@ public class AirDoctorStagePage {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
-				eleUtil.doClickcheckbox(ad3500UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				eleUtil.doActionsClick(ad3500UpgradeToIotCheckbox);				
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(AD3500increasequantitybtn);
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(ad3500addToCart);
+				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(4000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
@@ -417,12 +431,13 @@ public class AirDoctorStagePage {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
-				eleUtil.doClickcheckbox(ad3500UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				eleUtil.doActionsClick(ad3500UpgradeToIotCheckbox);				
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(AD3500increasequantitybtn);
 				eleUtil.doActionsClick(AD3500increasequantitybtn);
 				System.out.println("Selected Quantity");
 				Thread.sleep(2000);
+				eleUtil.doActionsClick(ad3500addToCart);
 				eleUtil.doActionsClick(ad3500addToCart);
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
@@ -997,6 +1012,12 @@ public class AirDoctorStagePage {
 	public void writeexcel(String subtotal, String flatrate, String tax, String total,String presubtotal, String preflatrate, String pretax, String pretotal,String orderId, int count)
 			throws InvalidFormatException, IOException {
 		ExcelUtil.setdata(AppConstants.STAGE_SHEET_NAME, presubtotal, preflatrate, pretax, pretotal,subtotal, flatrate, tax, total,orderId, count);
+	}
+	
+	@Step("Entering Values in Excel sheet for Subtotal,Shipping,Tax and Overall Total")
+	public void writeexcelold(String subtotal, String flatrate, String tax, String total,String orderId, int count)
+			throws InvalidFormatException, IOException {
+		ExcelUtilOld.setdata(AppConstants.EVERFLOW_TEST,subtotal, flatrate, tax, total,orderId, count);
 	}
 
 	public int testMe(ITestContext testContext) {

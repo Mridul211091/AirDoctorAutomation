@@ -22,11 +22,16 @@ public class AppConstants {
 	
 	//***************Sheet Name**************//
 	public static final String STAGE_SHEET_NAME = "independanceday";
+	public static final String EVERFLOW_TEST = "everflowtest";
+	public static final String SITE_MERGE_SHEET_NAME = "adsitemerge";
+	public static final String LIVE_SITE_MERGE_SHEET_NAME = "liveadsitemerge";
 	public static final String LIVE_SHEET_NAME = "independancedaylive";
+	public static final String BACK_TO_SCHOOL_LIVE_SHEET_NAME = "backtoschoollive";
 	public static final String PRODUCT_SHEET_NAME = "register";
 	public static final String MEMORIAL_SHEET_NAME = "memorialsale";
 	public static final String AFFILIATE_LINK = "genericaffiliates";
 	public static final String CUSTOM_AFFILIATE_LINK = "customaffiliates";
+	public static final String INVALID_LINK = "linkcheck";
 	
 	//***************Test Card Details**************//
 	public static final String CARD_NUMBER = "4111111111111111";

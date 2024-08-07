@@ -12,11 +12,14 @@ import org.testng.asserts.SoftAssert;
 
 import agi.qa.airdoctor.constants.AppConstants;
 import agi.qa.airdoctor.factory.DriverFactory;
+import agi.qa.airdoctor.pages.ADSiteMergeOrderFlowPage;
 import agi.qa.airdoctor.pages.Ad2500AffiliatePage;
 import agi.qa.airdoctor.pages.AirDoctorMemorialDayPage;
 import agi.qa.airdoctor.pages.AirDoctorStagePage;
 import agi.qa.airdoctor.pages.AirDoctorSummerSaleLivePage;
+import agi.qa.airdoctor.pages.CheckLinkPage;
 import agi.qa.airdoctor.pages.IndependenceDayOrderFlowPage;
+import agi.qa.airdoctor.pages.LiveBacktoSchoolOrderFlowPage;
 import agi.qa.airdoctor.pages.LiveIndependenceDayOrderFlowPage;
 import agi.qa.airdoctor.pages.LoginPage;
 import agi.qa.airdoctor.utils.ExcelUtil;
@@ -37,6 +40,9 @@ public class BaseTest {
 	protected AirDoctorStagePage airddoctorstg;
 	protected IndependenceDayOrderFlowPage independencedayPage;
 	protected LiveIndependenceDayOrderFlowPage liveindependencedayPage;
+	protected ADSiteMergeOrderFlowPage adsitemergepage;
+	protected LiveBacktoSchoolOrderFlowPage livebacktoorderflowPage;
+	protected CheckLinkPage checklinkPage;
 	protected SoftAssert softAssert;
 	
 	//@Parameters({"browser"})
@@ -57,9 +63,13 @@ public class BaseTest {
 		df = new DriverFactory();
 		prop = df.initProp();
 		driver = df.initDriver(prop);
-		loginPage = new LoginPage(driver);
+		//loginPage = new LoginPage(driver);
+		//checklinkPage= new CheckLinkPage(driver);
+		//adsitemergepage = new ADSiteMergeOrderFlowPage(driver);
+		//livebacktoorderflowPage = new LiveBacktoSchoolOrderFlowPage(driver);
 		//affiliatePage = new Ad2500AffiliatePage(driver);
 		//summersalePage= new AirDoctorSummerSaleLivePage(driver);
+		airddoctorstg= new AirDoctorStagePage(driver);
 		//softAssert = new SoftAssert();
 	}
 	
@@ -69,6 +79,4 @@ public class BaseTest {
 		driver.quit();
 	}
 	
-	
-
 }

@@ -26,7 +26,7 @@ import agi.qa.airdoctor.utils.TimeUtil;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 
-public class LiveIndependenceDayOrderFlowPage {
+public class LiveBacktoSchoolOrderFlowPage {
 
 	// Page class/Page Library/Page Object
 	private WebDriver driver;
@@ -57,7 +57,7 @@ public class LiveIndependenceDayOrderFlowPage {
 	private By ad5500_3500_2000_addToCart = By.xpath("//a[@id='iot_productaddtocart_301717']");
 	private By ad5500_3500_2000_UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='301719']");
 
-	//Buy AD5500 and AD2000 and receive $550 off!
+	//Buy AD5500 and AD2000 and receive $400 off! Back to School
 	private By ad5500_2000_productnametext = By.xpath("//section[@class='section product-listing-section spring_sos_sale product_section_252267']//h3[@id='nu-custom-heading-title'] | /h3/span[@class='bfcm-offer-text']");
 	private By ad5500_2000_productregularpricetext = By.xpath("//section[@class='section product-listing-section spring_sos_sale product_section_252267']//div[@class='main-price-wrapper regular_price']/p[@class='summer_sos_price_l1']/span[@class='regular_sos_price']");
 	private By ad5500_2000_productsalepricetext = By.xpath("//section[@class='section product-listing-section spring_sos_sale product_section_252267']//div[@class='main-price-wrapper regular_price']/p[@class='summer_sos_price_l1']/span[@class='sale_sos_price']");
@@ -69,9 +69,17 @@ public class LiveIndependenceDayOrderFlowPage {
 	
 	private By ad5500_2000_addToCart = By.xpath("//a[@id='iot_productaddtocart_252267']");
 	private By ad5500_2000_UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='252269']");
+	private By ad5500_2000_increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_252267']//input[@value='+']");
+
+	
+	//Buy AD2000 and AD1000 and receive $450 off! Back to School
+	private By ad2000_1000_addToCart = By.xpath("//a[@id='iot_productaddtocart_334221']");
+	private By ad2000_1000_UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='334224']");
+	private By ad2000_1000_increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_334221']//input[@value='+']");
+
 	
 	
-	//Buy AD3500 and AD2000 and receive $450 off!
+	//Buy AD3500 and AD2000 and receive $450 off! Back to School
 	private By ad3500_2000_productnametext = By.xpath("//section[contains(@class,'product_section_289211')]//div[contains(@class,'product_text-inner-col mobile-show-heading')]//h3[@id='nu-custom-heading-title']");
 	private By ad3500_2000_productregularpricetext = By.xpath("//section[contains(@class,'product_section_289211')]//p[1]//span[1]//del[1]//span[1]//bdi[1]");
 	private By ad3500_2000_productsalepricetext = By.xpath("//section[@class='section product-listing-section memorial_day_sale  product_section_289211']//div[1]//div[1]//div[1]//div[2]//div[1]//div[4]//p[1]//span[1]//ins[1]//span[1]//bdi[1]");
@@ -81,9 +89,9 @@ public class LiveIndependenceDayOrderFlowPage {
 	private By ad3500_2000_smartproductsalepricetext = By.xpath("//section[contains(@class,'product_section_289211')]//p[contains(@class,'earth_day_price_iot')]//ins[contains(@aria-hidden,'true')]");
 	private By ad3500_2000_smartproductsaleonsalepricetext = By.xpath("//section[@class='section product-listing-section spring_sos_sale product_section_252279']//div[@class='main-price-wrapper price_iot']/p[@class='summer_sos_price_l2']");
 	
-	private By ad3500_2000_addToCart = By.xpath("//a[@id='iot_productaddtocart_289211']");
-	private By ad3500_2000_UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='289213']");
-	private By ad3500_2000_increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_289211']//input[@value='+']");
+	private By ad3500_2000_addToCart = By.xpath("//a[@id='iot_productaddtocart_252279']");
+	private By ad3500_2000_UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='252281']");
+	private By ad3500_2000_increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_252279']//input[@value='+']");
 
 	
 	
@@ -92,18 +100,14 @@ public class LiveIndependenceDayOrderFlowPage {
 	private By ad3500_2500_productregularpricetext = By.xpath("//section[@class='section product-listing-section spring_sos_sale product_section_301720']//div[@class='main-price-wrapper regular_price']/p[@class='summer_sos_price_l1']/span[@class='regular_sos_price']");
 	private By ad3500_2500_productsalepricetext = By.xpath("//section[@class='section product-listing-section spring_sos_sale product_section_301720']//div[@class='main-price-wrapper regular_price']/p[@class='summer_sos_price_l1']/span[@class='sale_sos_price']");
 	private By ad3500_2500_productsaleonsalepricetext = By.xpath("//section[@class='section product-listing-section spring_sos_sale product_section_301720']//div[@class='main-price-wrapper regular_price']/p[@class='summer_sos_price_l2']");
-	
 	private By ad3500_2500_addToCart = By.xpath("//a[@id='iot_productaddtocart_301720']");
-	
-
-	
 	
 	
 	// AD3500 locators
 	private By AD3500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135514']//input[@value='+']");
 	private By ad3500addToCart = By.xpath("//a[@id='iot_productaddtocart_135514']");
 	private By ad3500UpgradeToIotCheckbox = By.xpath(
-			"//section[@class='section product-listing-section memorial_day_sale non_memorialday_bundle product_section_135514']//input[@name='upgrade_to_iot_chkbox']");
+			"//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='135528']");
 
 	private By ad3500productnametext = By.xpath("//section[contains(@class,'product_section_135514')]//div[contains(@class,'product_text-inner-col mobile-show-heading')]//h3[@id='nu-custom-heading-title']");
 	private By ad3500productregularpricetext = By.xpath("//section[contains(@class,'product_section_135514')]//p[1]//span[1]//del[1]//span[1]//bdi[1]");
@@ -114,13 +118,6 @@ public class LiveIndependenceDayOrderFlowPage {
 	private By ad3500smartproductsalepricetext = By.xpath("//section[contains(@class,'product_section_135514')]//p[contains(@class,'earth_day_price_iot')]//ins[contains(@aria-hidden,'true')]");
 	private By ad3500smartproductsaleonsalepricetext = By.xpath("//section[@class='section product-listing-section spring_sos_sale product_section_135514']//div[@class='main-price-wrapper price_iot']/p[@class='summer_sos_price_l2']");
 	
-	
-	
-	
-	
-	//SALE-ON-SALE Price:                                                 $329 
-	
-
 	// Buy AirDoctor 3500 And A One Year Filter Combo Pack!
 	private By buy2AD3500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_286932']//input[@value='+']");
 	private By buy2Ad3500UpgradeToIotCheckbox = By.xpath(
@@ -161,11 +158,9 @@ public class LiveIndependenceDayOrderFlowPage {
 		
 	private By buyAD1000increasequantitybtn = By
 				.xpath("//div[@class='quantity buttons_added']/input[@id='p_quantity451']/following-sibling::input[@value='+']");
-	private By buyAD1000addToCart = By.xpath("//section[contains(@class,'product_section_451')]//a[contains(@class,'button secondary btn-pri single_add_to_cart_button_sales')]");
+	private By buyAD1000addToCart = By.xpath("//section[contains(@class,'section product-listing-section backtoschool bts_products')]//a[contains(@class,'button secondary btn-pri single_add_to_cart_button_sales')]");
 	
 	// Buy AirDoctor 5500 And Receive $300 Off
-	
-	
 	
 	private By ad5500productnametext = By.xpath("//section[contains(@class,'product_section_135600')]//div[contains(@class,'product_text-inner-col mobile-show-heading')]//h3[@id='nu-custom-heading-title']");
 	private By ad5500productregularpricetext = By.xpath("//section[contains(@class,'product_section_135600')]//p[1]//span[1]//del[1]//span[1]//bdi[1]");
@@ -183,10 +178,7 @@ public class LiveIndependenceDayOrderFlowPage {
 			"//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='135604']");
 	private By buyAD5500addToCart = By.xpath("//a[@id='iot_productaddtocart_135600']");
 
-	// Buy AirDoctor 2000 And Receive $110 Off
-	
-	
-
+	// Buy AirDoctor 2000 And Receive $100 Off Back to School
 	private By buyAD2000productnametext = By.xpath("//section[contains(@class,'product_section_135592')]//div[contains(@class,'product_text-inner-col mobile-show-heading')]//h3[@id='nu-custom-heading-title']");
 	private By buyAD2000productregularpricetext = By.xpath("//section[contains(@class,'product_section_135592')]//p[1]//span[1]//del[1]//span[1]//bdi[1]");
 	private By buyAD2000productsalepricetext = By.xpath("//section[@class='section product-listing-section memorial_day_sale non_memorialday_bundle product_section_135592']//div[1]//div[1]//div[1]//div[2]//div[1]//div[4]//p[1]//span[1]//ins[1]//span[1]//bdi[1]");
@@ -210,7 +202,7 @@ public class LiveIndependenceDayOrderFlowPage {
 	// private By shopNow =By.xpath("//span[normalize-space()='SHOP NOW']");
 
 	private By shopNow = By
-			.xpath("//span[normalize-space()='shop now']");
+			.xpath("//a[@href='https://airdoctorpro.com/purifiers/']//span[contains(text(),'shop now')]");
 	// a[@href='https://airdoctorazstg.wpengine.com/purifiers/']
 	private By bannerText = By.xpath("//strong[contains(text(),'NEW! AirDoctor 2500 Wall-Mounted Purifier Sale-on-')]");
 	// private By bannerText =By.xpath("//ul[contains(@class,'nav header-bottom-nav
@@ -303,7 +295,7 @@ public class LiveIndependenceDayOrderFlowPage {
 	private By deletebtn = By.xpath("//*[@id=\"main\"]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[6]/a[3]");
 
 	// 2. Public Page Class Const...
-	public LiveIndependenceDayOrderFlowPage(WebDriver driver) {
+	public LiveBacktoSchoolOrderFlowPage(WebDriver driver) {
 		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
 		JsUtil = new JavaScriptUtil(driver);
@@ -327,12 +319,12 @@ public class LiveIndependenceDayOrderFlowPage {
 		return url;
 	}
 
-	public LiveIndependenceDayOrderFlowPage getaffiliateURL(String url) throws InterruptedException {
+	public LiveBacktoSchoolOrderFlowPage getaffiliateURL(String url) throws InterruptedException {
 		driver.get(url);
 		driver.findElement(shadowroot).getShadowRoot().findElement(cookiebannerbtn).click();
 		Thread.sleep(2000);
 		Allure.addAttachment(url, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-		return new LiveIndependenceDayOrderFlowPage(driver);
+		return new LiveBacktoSchoolOrderFlowPage(driver);
 	}
 
 	public String getBannerText() {
@@ -346,6 +338,11 @@ public class LiveIndependenceDayOrderFlowPage {
 		String title = eleUtil.doGetElementText(ad3500productnametext);
 		System.out.println("AD 3500 Model Name : " + title);
 		return title;
+	}
+	
+	public void clearcookiepopup() throws InterruptedException {
+		driver.findElement(shadowroot).getShadowRoot().findElement(cookiebannerbtn).click();
+		Thread.sleep(2000);
 	}
 	
 	@Step("AirDoctor 3500 Summer Sale Price")
@@ -573,7 +570,7 @@ public class LiveIndependenceDayOrderFlowPage {
 		}
 	}
 	
-	  @Step("Getting PreSubtotal,PreTax,PreShipping,PreFinal Total from from Checkout Page")
+  @Step("Getting PreSubtotal,PreTax,PreShipping,PreFinal Total from from Checkout Page")
 		public Map<String, String> getpreorderdetails() throws InvalidFormatException, IOException {
 			Allure.addAttachment("Pre Order Details", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
 			preorderdetailsMap.put("preordersubtotal", eleUtil.getElement(presubtotalvalue).getText());
@@ -790,6 +787,191 @@ public class LiveIndependenceDayOrderFlowPage {
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
+						
+			else if (ModelName.equalsIgnoreCase("AD2000 with AD1000") && ProductQuantity.equals("1")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad2000_1000_increasequantitybtn);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(ad2000_1000_addToCart);
+				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+			}
+			else if (ModelName.equalsIgnoreCase("AD2000 with AD1000") && ProductQuantity.equals("2")) {
+
+				System.out.println(ModelName + " with quantity " + ProductQuantity);;
+				eleUtil.scrollTiView(ad2000_1000_increasequantitybtn);
+				Thread.sleep(3000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad2000_1000_increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad2000_1000_addToCart);
+				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD2000 with AD1000") && ProductQuantity.equals("3")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad2000_1000_increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad2000_1000_increasequantitybtn);
+				eleUtil.doActionsClick(ad2000_1000_increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad2000_1000_addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				System.out.println("Clicked on CheckOut");
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD2000i with AD1000i") && ProductQuantity.equals("1")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad2000_1000_increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doClickcheckbox(ad2000_1000_UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				//eleUtil.doActionsClick(ad3500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad2000_1000_addToCart);
+				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+			}
+
+			else if (ModelName.equalsIgnoreCase("AD2000i with AD1000i") && ProductQuantity.equals("2")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad2000_1000_increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doClickcheckbox(ad2000_1000_UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad2000_1000_increasequantitybtn);
+				Thread.sleep(3000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad2000_1000_addToCart);
+				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD2000i with AD1000i") && ProductQuantity.equals("3")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad2000_1000_increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doClickcheckbox(ad2000_1000_UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad2000_1000_increasequantitybtn);
+				eleUtil.doActionsClick(ad2000_1000_increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad2000_1000_addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				System.out.println("Clicked on CheckOut");
+				Thread.sleep(4000);
+			}
+			
+			else if (ModelName.equalsIgnoreCase("AD5500 with AD2000") && ProductQuantity.equals("1")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad5500_2000_increasequantitybtn);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(ad5500_2000_addToCart);
+				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+			}
+			else if (ModelName.equalsIgnoreCase("AD5500 with AD2000") && ProductQuantity.equals("2")) {
+
+				System.out.println(ModelName + " with quantity " + ProductQuantity);;
+				eleUtil.scrollTiView(ad5500_2000_increasequantitybtn);
+				Thread.sleep(3000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad5500_2000_increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad5500_2000_addToCart);
+				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD5500 with AD2000") && ProductQuantity.equals("3")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad5500_2000_increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad5500_2000_increasequantitybtn);
+				eleUtil.doActionsClick(ad5500_2000_increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad5500_2000_addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				System.out.println("Clicked on CheckOut");
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD5500i with AD2000i") && ProductQuantity.equals("1")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad5500_2000_increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doClickcheckbox(ad5500_2000_UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				//eleUtil.doActionsClick(ad3500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad5500_2000_addToCart);
+				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+			}
+
+			else if (ModelName.equalsIgnoreCase("AD5500i with AD2000i") && ProductQuantity.equals("2")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad5500_2000_increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doClickcheckbox(ad5500_2000_UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad5500_2000_increasequantitybtn);
+				Thread.sleep(3000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad5500_2000_addToCart);
+				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD5500i with AD2000i") && ProductQuantity.equals("3")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(ad5500_2000_increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doClickcheckbox(ad5500_2000_UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad5500_2000_increasequantitybtn);
+				eleUtil.doActionsClick(ad5500_2000_increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				Allure.addAttachment("Select Model 1", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+				eleUtil.doActionsClick(ad5500_2000_addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				System.out.println("Clicked on CheckOut");
+				Thread.sleep(4000);
+			}
+			
 			
 			else if (ModelName.equalsIgnoreCase("AD3500") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
@@ -1141,7 +1323,7 @@ public class LiveIndependenceDayOrderFlowPage {
 	@Step("Entering Values in Excel sheet for Subtotal,Shipping,Tax and Overall Total")
 	public void writeexcel(String presubtotal, String preflatrate, String pretax, String pretotal,int count)
 			throws InvalidFormatException, IOException {
-		ExcelUtillive.setdata(AppConstants.LIVE_SHEET_NAME, presubtotal, preflatrate, pretax, pretotal,count);
+		ExcelUtillive.setdata(AppConstants.BACK_TO_SCHOOL_LIVE_SHEET_NAME, presubtotal, preflatrate, pretax, pretotal,count);
 	}
 
 	public int testMe(ITestContext testContext) {
