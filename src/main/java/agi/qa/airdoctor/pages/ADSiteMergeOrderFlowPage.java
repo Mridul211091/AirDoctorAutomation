@@ -518,6 +518,10 @@ public void acceptcookie() throws InterruptedException {
 	eleUtil.doActionsClick(shopNow);
 	Thread.sleep(5000);
 	}
+	public void clearcookiepopup() throws InterruptedException {
+		driver.findElement(shadowroot).getShadowRoot().findElement(cookiebannerbtn).click();
+		Thread.sleep(2000);
+	}
 
 	public String getModelText() {
 		String title = eleUtil.doGetElementText(Model2500Text);

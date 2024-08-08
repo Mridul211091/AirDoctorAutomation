@@ -12,6 +12,7 @@ import org.testng.asserts.SoftAssert;
 
 import agi.qa.airdoctor.constants.AppConstants;
 import agi.qa.airdoctor.factory.DriverFactory;
+import agi.qa.airdoctor.pages.ADFiltersOrderFlowPage;
 import agi.qa.airdoctor.pages.ADSiteMergeOrderFlowPage;
 import agi.qa.airdoctor.pages.Ad2500AffiliatePage;
 import agi.qa.airdoctor.pages.AirDoctorMemorialDayPage;
@@ -41,6 +42,7 @@ public class BaseTest {
 	protected IndependenceDayOrderFlowPage independencedayPage;
 	protected LiveIndependenceDayOrderFlowPage liveindependencedayPage;
 	protected ADSiteMergeOrderFlowPage adsitemergepage;
+	protected ADFiltersOrderFlowPage adfilterpage;
 	protected LiveBacktoSchoolOrderFlowPage livebacktoorderflowPage;
 	protected CheckLinkPage checklinkPage;
 	protected SoftAssert softAssert;
@@ -69,7 +71,8 @@ public class BaseTest {
 		//livebacktoorderflowPage = new LiveBacktoSchoolOrderFlowPage(driver);
 		//affiliatePage = new Ad2500AffiliatePage(driver);
 		//summersalePage= new AirDoctorSummerSaleLivePage(driver);
-		airddoctorstg= new AirDoctorStagePage(driver);
+		//airddoctorstg= new AirDoctorStagePage(driver);
+		adfilterpage= new ADFiltersOrderFlowPage(driver);
 		//softAssert = new SoftAssert();
 	}
 	
